@@ -1,0 +1,26 @@
+---
+databases:
+  - name: zebra-butterfly-db
+    tables:
+      - name: picture
+        columns:
+          - width:
+              kind: number
+          - height:
+              kind: number
+          - iso:
+              kind: number
+          - aperture:
+              kind: number
+          - ratio:
+              kind: number
+          - flash:
+              kind: boolean
+          - location:
+              kind: string
+          - sizeKB:
+              kind: number
+          - whiteBalance:
+            kind: number
+          
+
