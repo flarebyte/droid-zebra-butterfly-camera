@@ -3,6 +3,8 @@ databases:
   - name: zebra-butterfly-db
     tables:
       - name: picture
+        id:
+          kind: unique-id
         columns:
           - width:
               kind: number
@@ -16,11 +18,28 @@ databases:
               kind: number
           - flash:
               kind: boolean
-          - location:
-              kind: string
           - sizeKB:
               kind: number
           - whiteBalance:
+              kind: number
+          - format:
+              kind: string
+              enum: jpeg,png,gif
+          - colors:
             kind: number
-          
-
+      - name: processing
+        id:
+          kind: unique-id
+        columns:
+          - inbound-image-id:
+              kind: unique-id
+              relation: picture
+          - outbound-image-id:
+              kind: unique-id
+              relation: picture
+          - min-width:
+              kind: number
+          - min-height:
+              kind: number
+          - status:
+              kind: string-tags
